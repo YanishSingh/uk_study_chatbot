@@ -1,0 +1,65 @@
+{
+  "document_checklist": [
+    "SLC Transcript / Pass Certificate / Character Certificate",
+    "+2 Transcript / Provisional / Migration / Character Certificate",
+    "Bachelor\u2019s Transcript / Provisional / Pass Certificate / Character Certificate (For Master only)",
+    "Two Recommendation Letters",
+    "English Language (IELTS / PTE / TOEFL / MOI)",
+    "Passport (Name and Address Page)",
+    "CV",
+    "Statement of Purpose (SOP)",
+    "Experience Letter (For MBA \u2013 2 years of exp. is mandatory - Managerial Level)",
+    "Marriage Certificate (for dependent \u2013 available only for Master Course)"
+  ],
+  "cas_documents": [
+    "Swift Payment Slip",
+    "CAS Request Form (University wise)",
+    "Bank Statement \u2013 28 days (Matured Balance)",
+    "Amount must not be below the required balance during the UKVI required period",
+    "Details must be in the student\u2019s or parent\u2019s name",
+    "Total amount = Tuition Fees + Living Cost OR Educational Loan \u2013 In student\u2019s name only",
+    "Loan offer letter and sanction paper (include exchange rate, disbursement conditions)",
+    "Student Birth Certificate (original and translated)",
+    "Consent letter from parents if bank statement in parent\u2019s name",
+    "TB Report \u2013 Only from IOM / Norvic"
+  ],
+  "visa_documents": [
+    "Valid Passport",
+    "Visa Application Form",
+    "VFS Appointment Confirmation Letter",
+    "Proof of Visa Fee / Application Fee Payment",
+    "Proof of Funds / Financial Evidence",
+    "All Academic Documents (10th, 12th, Bachelors for Master)",
+    "English Proficiency Proof (IELTS/PTE/TOEFL/MOI)",
+    "Confirmation of Acceptance for Studies (CAS)",
+    "Valid ATAS Certificate (if required)",
+    "TB Test Results",
+    "Immigration Health Surcharge (IHS) Payment",
+    "Sponsorship Letter (if applicable)",
+    "Police Clearance Certificate",
+    "Consent Letter and Birth Certificate if under 18"
+  ],
+  "living_cost": {
+    "inside_london": {
+      "student_9_months_gbp": 13347,
+      "student_monthly_gbp": 1483,
+      "dependent_9_months_gbp": 7605,
+      "dependent_monthly_gbp": 845
+    },
+    "outside_london": {
+      "student_9_months_gbp": 10224,
+      "student_monthly_gbp": 1136,
+      "dependent_9_months_gbp": 6120,
+      "dependent_monthly_gbp": 680
+    }
+  },
+  "visa_fee": {
+    "student_application_gbp": 524,
+    "dependent_application_gbp": 524,
+    "ihs_nhs_per_year_gbp": 776
+  },
+  "other_costs": {
+    "tb_test_usd": 70,
+    "insurance_per_year_gbp": 776
+  }
+}

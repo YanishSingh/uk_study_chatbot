@@ -1,0 +1,70 @@
+{
+  "uk_application_checklist": {
+    "offer_letter_documents": [
+      "SLC Transcript / Pass Certificate / Character Certificate",
+      "+2 Transcript / Provisional / Migration / Character Certificate",
+      "Bachelor’s Transcript / Provisional / Pass Certificate / Character Certificate (For Master only)",
+      "Two Recommendation Letters",
+      "English Language (IELTS / PTE / TOEFL / MOI)",
+      "Passport (Name and Address Page)",
+      "CV",
+      "Statement of Purpose (SOP)",
+      "Experience Letter (For MBA – 2 years of exp. is mandatory - Managerial Level)",
+      "Marriage Certificate (for dependent – only for Master Course)"
+    ],
+    "cas_documents": [
+      "Swift Payment Slip",
+      "CAS Request Form (University wise)",
+      "Bank Statement – 28 days (Matured Balance)",
+      "Amount must not be below the required balance during the UKVI required period",
+      "Bank statement in student or student’s parent’s name",
+      "Total amount = Tuition Fees + Living Cost",
+      "OR Educational Loan – In student’s name only",
+      "Loan offer letter and sanction paper",
+      "Sanction paper must include: Exchange rate, Disbursement after visa, No disbursement conditions",
+      "Student Birth Certificate (original & translated in English)",
+      "Consent letter from parents (if bank statement is in parent’s name)",
+      "TB Report (Only from IOM/Norvic)"
+    ],
+    "visa_documents": [
+      "Valid Passport",
+      "Visa Application Form",
+      "VFS Appointment Confirmation Letter",
+      "VISA Documents Checklist",
+      "Proof of Visa Fee / Application Fee Payment",
+      "Proof of Funds / Financial Evidence",
+      "All Academic Documents (10th, 12th, and Bachelor’s for Masters)",
+      "English Language Proficiency",
+      "Confirmation of Acceptance for Studies (CAS)",
+      "Valid ATAS Certificate (if needed)",
+      "TB Test Results",
+      "Immigration Health Surcharge (IHS) Payment",
+      "Sponsorship Letter (if applicable)",
+      "Police Clearance Certificate",
+      "If under 18: Consent Letter from both parents/guardian, Birth Certificate, Document showing parents’ names"
+    ]
+  },
+  "uk_costing_info": {
+    "living_cost": {
+      "inside_london": {
+        "student": "£13,347 for 9 months (£1,483/month)",
+        "dependent": "£7,605 for 9 months (£845/month)"
+      },
+      "outside_london": {
+        "student": "£10,224 for 9 months (£1,136/month)",
+        "dependent": "£6,120 for 9 months (£680/month)"
+      }
+    },
+    "visa_fee": {
+      "student_application_fee": "£524",
+      "dependent_application_fee": "£524",
+      "ihs_nhs_charge": "£776/year per person"
+    },
+    "other_costs": {
+      "tuition_fees": "As mentioned in Offer Letter",
+      "tb_test": "$70 USD",
+      "insurance": "£776/year per person",
+      "visa_application_fee": "£490"
+    }
+  }
+}
