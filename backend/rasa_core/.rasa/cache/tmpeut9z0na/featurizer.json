@@ -1,0 +1,79 @@
+{
+  "type": "IntentMaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "ask_doc_checklist": 1,
+        "ask_living_cost": 2,
+        "ask_weather": 3,
+        "back": 4,
+        "bot_challenge": 5,
+        "deny": 6,
+        "goodbye": 7,
+        "greet": 8,
+        "inform_profile": 9,
+        "mood_great": 10,
+        "mood_unhappy": 11,
+        "nlu_fallback": 12,
+        "out_of_scope": 13,
+        "restart": 14,
+        "session_start": 15
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_weather": 13,
+        "action_living_cost": 14,
+        "action_doc_checklist": 15,
+        "action_recommend_universities": 16,
+        "utter_ask_budget": 17,
+        "utter_ask_english_waiver": 18,
+        "utter_ask_gpa": 19,
+        "utter_ask_ielts": 20,
+        "utter_ask_location_pref": 21,
+        "utter_ask_moi": 22,
+        "utter_ask_pte": 23,
+        "utter_ask_toefl": 24,
+        "utter_cheer_up": 25,
+        "utter_default": 26,
+        "utter_did_that_help": 27,
+        "utter_goodbye": 28,
+        "utter_greet": 29,
+        "utter_happy": 30,
+        "utter_iamabot": 31,
+        "utter_submit": 32,
+        "student_profile_form": 33
+      },
+      "entities": {
+        "budget": 0,
+        "english_waiver": 1,
+        "gpa": 2,
+        "ielts": 3,
+        "location_pref": 4,
+        "moi": 5,
+        "pte": 6,
+        "toefl": 7
+      },
+      "slots": {},
+      "active_loop": {
+        "student_profile_form": 0
+      }
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

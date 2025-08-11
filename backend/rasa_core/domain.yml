@@ -1,0 +1,260 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - ask_weather
+  - ask_living_cost
+  - ask_doc_checklist
+  - ask_visa_info
+  - ask_scholarship
+  - ask_university_ranking
+  - ask_application_deadline
+  - compare_universities
+  - inform_profile
+  - ask_field_specific
+  - out_of_scope
+  - nlu_fallback
+  - request_relaxed_criteria
+  - ask_universities_by_budget
+  - ask_ielts_waiver
+  - ask_affordable_universities
+  - self_harm
+  - illegal_or_dangerous
+
+entities:
+  - gpa
+  - ielts
+  - pte
+  - toefl
+  - english_waiver
+  - moi
+  - budget
+  - location_pref
+
+slots:
+  gpa:
+    type: float
+    min_value: 0.0
+    max_value: 4.0
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: gpa
+        conditions:
+          - active_loop: student_profile_form
+      - type: from_text
+        conditions:
+          - active_loop: student_profile_form
+            requested_slot: gpa
+      - type: custom
+        conditions:
+          - active_loop: student_profile_form
+            requested_slot: gpa
+
+  study_level:
+    type: categorical
+    values:
+      - ug
+      - pg
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: student_profile_form
+            requested_slot: study_level
+
+  ielts:
+    type: float
+    min_value: 0.0
+    max_value: 9.0
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: ielts
+
+  pte:
+    type: float
+    min_value: 0.0
+    max_value: 90.0
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: pte
+
+  toefl:
+    type: float
+    min_value: 0.0
+    max_value: 120.0
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: toefl
+
+  english_waiver:
+    type: bool
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: english_waiver
+
+  moi:
+    type: bool
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: moi
+
+  field_of_study:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: student_profile_form
+            requested_slot: field_of_study
+
+  budget:
+    type: float
+    min_value: 0.0
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: budget
+        conditions:
+          - active_loop: student_profile_form
+
+  location_pref:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: location_pref
+        conditions:
+          - active_loop: student_profile_form
+
+  english_requirement_met:
+    type: bool
+    influence_conversation: false
+    mappings:
+      - type: custom
+
+responses:
+  utter_greet:
+    - text: "Namaste! 🙏 I'm here to help you find the perfect UK university for your studies. How can I assist you today?"
+    - text: "Hello there! 👋 Ready to explore UK universities? I can help you find the best match for your profile!"
+    - text: "Hi! I'm your UK university guide. Let's find you the perfect place to study! 🎓"
+
+  utter_iamabot:
+    - text: "I am a bot designed specifically to help Nepali students with UK university applications, powered by Rasa."
+
+  utter_cheer_up:
+    - text: "Don't worry! Studying abroad can feel overwhelming, but you're taking the right steps. Here's something to motivate you:"
+      image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+    - text: "Did that help you feel better? Remember, thousands of Nepali students successfully study in the UK every year!"
+
+  utter_happy:
+    - text: "Great! I'm here whenever you need help with your UK university journey. 🌟"
+    - text: "Excellent! Feel free to ask me anything about UK universities, visa process, or living costs."
+
+  utter_goodbye:
+    - text: "Dhanyabad! Best of luck with your UK university applications. Feel free to come back anytime! 🎓✈️"
+    - text: "Goodbye! Wishing you all the best for your studies in the UK. See you soon! 👋"
+
+  utter_default:
+    - text: "I'm not sure I understood that completely. Here's what I can help you with:\n\n🎓 **University Recommendations** - Tell me your GPA, English scores, and preferences\n📋 **Application Guidance** - Documents, deadlines, requirements\n💰 **Financial Info** - Living costs, tuition fees, scholarships\n🛂 **Visa Information** - Requirements, process, timeline\n\nWhat would you like to know about studying in the UK?"
+
+  utter_out_of_scope:
+    - text: "I'm specifically designed to help with UK university applications for Nepali students. I can assist you with university recommendations, visa information, living costs, scholarships, and application processes. How can I help you with your UK studies?"
+    - text: "That's outside my expertise! I specialize in UK university guidance for Nepali students. I can help you find universities, understand visa requirements, living costs, and application deadlines. What would you like to know about studying in the UK?"
+
+  # Enhanced form slot prompts
+  utter_ask_gpa:
+    - text: "Please provide your GPA (0.0-4.0) or percentage (0-100%). Examples: '2.8', 'my GPA is 3.5', '70%', 'it is 75%', or 'my percentage is 85'\n\nCould you tell me your GPA/CGPA? If you have percentage, I can help convert it."
+
+  utter_ask_study_level:
+    - text: "Are you applying for Undergraduate (UG/Bachelors) or Postgraduate (PG/Masters)? Reply with 'UG' or 'PG'."
+
+  utter_ask_english_requirement:
+    - text: "For English proficiency, do you have any of these: IELTS, PTE, TOEFL scores, an English waiver based on Grade 12 English (e.g., B/B+ or 70%+), or MOI certificate?"
+
+  utter_ask_english_requirement_met:
+    - text: "For English proficiency, do you have any of these: IELTS, PTE, TOEFL scores, an English waiver based on Grade 12 English (e.g., B/B+ or 70%+), or MOI certificate?"
+
+  utter_ask_field_of_study:
+    - text: "Which field are you interested in (e.g., Computer Science, Business, Engineering, Data Science, Nursing)?"
+
+  utter_ask_ielts:
+    - text: "What is your IELTS overall score? (0-9 scale)"
+
+  utter_ask_pte:
+    - text: "What is your PTE Academic score? (0-90 scale)"
+
+  utter_ask_toefl:
+    - text: "What is your TOEFL iBT score? (0-120 scale)"
+
+  utter_ask_english_waiver:
+    - text: "Do you have an English waiver? (e.g., B/B+ in Grade 12 English, or MOI from university)"
+
+  utter_ask_moi:
+    - text: "Do you have a Medium of Instruction (MOI) certificate from your previous institution?"
+
+  utter_ask_budget:
+    - text: "What's your annual tuition budget in GBP (£)? (e.g., 20000)"
+
+  utter_ask_location_pref:
+    - text: "Do you prefer universities in London, outside London, or any specific city?"
+
+  utter_submit:
+    - text: "Thanks! I'll analyze your profile and find universities that best fit your qualifications and preferences."
+
+  # New responses for additional features
+  utter_visa_info:
+    - text: "For UK student visa, you'll need: Valid passport, CAS from university, financial proof (tuition + £1,334/month living costs), English proficiency proof, and TB test results."
+
+  utter_scholarship_info:
+    - text: "Popular scholarships for Nepali students: Chevening, Commonwealth, university-specific scholarships. Check individual university websites for merit-based options."
+
+  utter_application_deadline:
+    - text: "General deadlines: September intake (Jan-July), January intake (Sept-Nov). Popular universities fill up early, so apply as soon as possible!"
+
+actions:
+  - action_weather
+  - action_living_cost
+  - action_doc_checklist
+  - action_recommend_universities
+  - action_visa_info
+  - action_scholarship_info
+  - action_university_ranking
+  - action_application_deadline
+  - action_compare_universities
+  - action_field_specific
+  - action_recommend_universities_relaxed
+  - action_chatgpt_fallback
+  - action_universities_by_budget
+  - action_ielts_waiver_universities
+  - action_affordable_universities
+  - action_safety_self_harm
+  - action_safety_illegal_danger
+  - validate_student_profile_form
+
+forms:
+  student_profile_form:
+    required_slots:
+      - gpa
+      - study_level
+      - english_requirement_met
+      - field_of_study
+      - budget
+      - location_pref
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,22 @@
+{
+  "0": "affirm",
+  "1": "ask_application_deadline",
+  "2": "ask_doc_checklist",
+  "3": "ask_field_specific",
+  "4": "ask_living_cost",
+  "5": "ask_scholarship",
+  "6": "ask_universities_by_budget",
+  "7": "ask_university_ranking",
+  "8": "ask_visa_info",
+  "9": "ask_weather",
+  "10": "bot_challenge",
+  "11": "compare_universities",
+  "12": "deny",
+  "13": "goodbye",
+  "14": "greet",
+  "15": "inform_profile",
+  "16": "mood_great",
+  "17": "mood_unhappy",
+  "18": "out_of_scope",
+  "19": "request_relaxed_criteria"
+}

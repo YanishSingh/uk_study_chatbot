@@ -1,0 +1,27 @@
+# This file contains the different endpoints your bot can use.
+
+# Server which runs your custom actions.
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+
+# (Optional) Server where the models are pulled from.
+# models:
+#   url: http://my-server.com/models/default_core@latest
+#   wait_time_between_pulls: 10
+
+# (Optional) Tracker store which is used to store the conversations.
+# By default the conversations are stored in memory.
+# tracker_store:
+#   type: redis
+#   url: localhost
+#   port: 6379
+#   db: 0
+#   password: ""
+#   use_ssl: false
+
+# (Optional) Event broker which all conversation events should be streamed to.
+# event_broker:
+#   url: localhost
+#   username: username
+#   password: password
+#   queue: queue

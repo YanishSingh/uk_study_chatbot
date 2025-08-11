@@ -1,0 +1,13 @@
+{
+  "0": "affirm",
+  "1": "ask_doc_checklist",
+  "2": "ask_living_cost",
+  "3": "ask_weather",
+  "4": "bot_challenge",
+  "5": "deny",
+  "6": "goodbye",
+  "7": "greet",
+  "8": "inform_profile",
+  "9": "mood_great",
+  "10": "mood_unhappy"
+}

@@ -1,0 +1,239 @@
+version: "3.1"
+
+stories:
+
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: weather lookup
+    steps:
+      - intent: ask_weather
+      - action: action_weather
+
+  - story: living cost info
+    steps:
+      - intent: ask_living_cost
+      - action: action_living_cost
+
+  - story: document checklist info
+    steps:
+      - intent: ask_doc_checklist
+      - action: action_doc_checklist
+
+  - story: visa information
+    steps:
+      - intent: ask_visa_info
+      - action: action_visa_info
+
+  - story: scholarship information
+    steps:
+      - intent: ask_scholarship
+      - action: action_scholarship_info
+
+  - story: university ranking info
+    steps:
+      - intent: ask_university_ranking
+      - action: action_university_ranking
+
+  - story: application deadline info
+    steps:
+      - intent: ask_application_deadline
+      - action: action_application_deadline
+
+  - story: compare universities
+    steps:
+      - intent: compare_universities
+      - action: action_compare_universities
+
+  - story: field specific request
+    steps:
+      - intent: ask_field_specific
+      - action: action_field_specific
+
+  - story: direct university recommendation request
+    steps:
+      - intent: inform_profile
+      - action: student_profile_form
+      - active_loop: student_profile_form
+
+  - story: field specific to profile form
+    steps:
+      - intent: ask_field_specific
+      - action: action_field_specific
+      - intent: inform_profile
+      - action: student_profile_form
+      - active_loop: student_profile_form
+
+  - story: profile → recommend (complete flow)
+    steps:
+      - intent: inform_profile
+      - action: student_profile_form
+      - active_loop: student_profile_form
+      - slot_was_set:
+        - requested_slot: gpa
+      - slot_was_set:
+        - gpa: 3.2
+      - action: student_profile_form
+      - slot_was_set:
+        - requested_slot: english_requirement_met
+      - slot_was_set:
+        - ielts: 6.5
+        - english_requirement_met: true
+      - action: student_profile_form
+      - slot_was_set:
+        - requested_slot: budget
+      - slot_was_set:
+        - budget: 20000
+      - action: student_profile_form
+      - slot_was_set:
+        - requested_slot: location_pref
+      - slot_was_set:
+        - location_pref: "outside London"
+      - action: student_profile_form
+      - active_loop: null
+      - action: utter_submit
+      - action: action_recommend_universities
+
+  - story: profile with waiver
+    steps:
+      - intent: inform_profile
+        entities:
+        - gpa: 3.5
+        - english_waiver: true
+        - budget: 25000
+      - action: student_profile_form
+      - active_loop: student_profile_form
+      - action: student_profile_form
+      - active_loop: null
+      - action: utter_submit
+      - action: action_recommend_universities
+
+  - story: university request with ranking inquiry
+    steps:
+      - intent: inform_profile
+      - action: student_profile_form
+      - active_loop: student_profile_form
+      - intent: ask_university_ranking
+      - action: action_university_ranking
+      - action: student_profile_form
+      - active_loop: null
+      - action: utter_submit
+      - action: action_recommend_universities
+
+  - story: multiple queries flow
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_living_cost
+      - action: action_living_cost
+      - intent: ask_visa_info
+      - action: action_visa_info
+      - intent: inform_profile
+      - action: student_profile_form
+      - active_loop: student_profile_form
+      - action: student_profile_form
+      - active_loop: null
+      - action: utter_submit
+      - action: action_recommend_universities
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: scholarship inquiry flow
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ask_scholarship
+      - action: action_scholarship_info
+      - intent: ask_application_deadline
+      - action: action_application_deadline
+      - intent: affirm
+      - action: utter_happy
+
+  - story: information gathering flow
+    steps:
+      - intent: ask_doc_checklist
+      - action: action_doc_checklist
+      - intent: ask_university_ranking
+      - action: action_university_ranking
+      - intent: compare_universities
+      - action: action_compare_universities
+
+  - story: weather and living cost combo
+    steps:
+      - intent: ask_weather
+      - action: action_weather
+      - intent: ask_living_cost
+      - action: action_living_cost
+
+  - story: comprehensive university inquiry
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: inform_profile
+      - action: student_profile_form
+      - active_loop: student_profile_form
+      - action: student_profile_form
+      - active_loop: null
+      - action: utter_submit
+      - action: action_recommend_universities
+      - intent: ask_scholarship
+      - action: action_scholarship_info
+      - intent: ask_application_deadline
+      - action: action_application_deadline
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - story: form validation retry
+    steps:
+      - intent: inform_profile
+      - action: student_profile_form
+      - active_loop: student_profile_form
+      - slot_was_set:
+        - requested_slot: gpa
+      - intent: inform_profile
+        entities:
+        - gpa: 5.0  # Invalid GPA
+      - action: student_profile_form
+      - slot_was_set:
+        - requested_slot: gpa  # Should ask again
+      - intent: inform_profile
+        entities:
+        - gpa: 3.2  # Valid GPA
+      - action: student_profile_form
+      - active_loop: null
+      - action: utter_submit
+      - action: action_recommend_universities
+
+  - story: ielts waiver universities
+    steps:
+      - intent: ask_ielts_waiver
+      - action: action_ielts_waiver_universities
+
+  - story: affordable universities
+    steps:
+      - intent: ask_affordable_universities
+      - action: action_affordable_universities

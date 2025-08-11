@@ -1,0 +1,525 @@
+version: "3.1"
+
+nlu:
+  # ─── Greetings ─────────────────────────────────────────
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - hello there
+      - good morning
+      - good evening
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - namaste
+      - namaskar
+
+  # ─── Farewells ─────────────────────────────────────────
+  - intent: goodbye
+    examples: |
+      - cu
+      - good by
+      - cee you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - see you later
+      - dhanyabad
+      - thank you
+
+  # ─── Affirm / Deny ─────────────────────────────────────
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - ho
+      - huncha
+      - okay
+      - alright
+      - sure
+      - absolutely
+      - definitely
+      - right
+      - exactly
+
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - hoina
+      - chaina
+      - nope
+      - not at all
+      - I disagree
+
+  # ─── Mood ──────────────────────────────────────────────
+  - intent: mood_great
+    examples: |
+      - perfect
+      - great
+      - amazing
+      - feeling like a king
+      - wonderful
+      - I am feeling very good
+      - I am great
+      - I am amazing
+      - I am going to save the world
+      - super stoked
+      - extremely good
+      - so so perfect
+      - so good
+      - so perfect
+
+  - intent: mood_unhappy
+    examples: |
+      - my day was horrible
+      - I am sad
+      - I don't feel very well
+      - I am disappointed
+      - super sad
+      - I'm so sad
+      - sad
+      - very sad
+      - unhappy
+      - not good
+      - not very good
+      - extremely sad
+      - so saad
+      - so sad
+
+  # ─── Bot Challenge ─────────────────────────────────────
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+
+  # ─── Profile Info for University Recommendation ───────
+  - intent: inform_profile
+    examples: |
+      - My [GPA](gpa) is [3.2](gpa) and [IELTS](ielts) is [6.0](ielts)
+      - I want to apply to UK
+      - I want to apply to a UK university
+      - Help me apply to UK
+      - I want recommendations
+      - I want to find universities
+      - I need help applying to UK universities
+      - Start my application
+      - Begin application process
+      - Recommend universities for me
+      - University recommendations please
+      - My [GPA](gpa) is [3.2](gpa) and [IELTS](ielts) is [6.0](ielts)
+      - I scored [580](toefl) on [TOEFL](toefl) and have a [3.5](gpa) [GPA](gpa)
+      - GPA [3.1](gpa), IELTS [6.5](ielts)
+      - I have a [70](pte) in [PTE](pte) and a [GPA](gpa) of [3.4](gpa)
+      - I got B+ in Grade 12 English so I have an [English waiver](english_waiver)
+      - I studied at [TU](moi) so my [MOI](moi) is accepted
+      - My budget is [£15000](budget) per year
+      - I want a university [outside London](location_pref)
+      - I prefer [London](location_pref) universities
+      - My [CGPA](gpa) is [3.6](gpa)
+      - I have [IELTS](ielts) score of [7.0](ielts)
+      - [PTE](pte) score is [65](pte)
+      - [TOEFL](toefl) [95](toefl)
+      - I have [English waiver](english_waiver) from [IOE](moi)
+      - Budget around [£20000](budget)
+      - Looking for universities in [Manchester](location_pref)
+      - Prefer [outside London](location_pref)
+      - [London based](location_pref) universities please
+      - My annual budget is [£18000](budget)
+      - I can spend up to [£25000](budget) per year
+      - [CGPA](gpa) [2.8](gpa)
+      - Got [6.5](ielts) in [IELTS](ielts)
+      - [2.8](gpa)
+      - [3.2](gpa)
+      - [3.5](gpa)
+      - [2.5](gpa)
+      - [3.0](gpa)
+      - [3.7](gpa)
+      - [2.9](gpa)
+      - [3.8](gpa)
+      - [3.3](gpa)
+      - [2.6](gpa)
+      - it is [70%](gpa)
+      - [75%](gpa)
+      - my percentage is [80%](gpa)
+      - I got [85%](gpa) in my degree
+      - [70](gpa) percent
+      - [75](gpa) percentage
+      - I have [78%](gpa)
+      - My result is [82%](gpa)
+      - I want you to find me the best university for me
+      - Help me choose a university
+      - I need university recommendations
+      - Find universities for me
+      - Suggest universities for my profile
+      - Which university should I apply to
+      - I want recommendations for IT field
+      - Help me find suitable universities
+      - I'm looking for university suggestions
+      - Find me the best university
+      - I want to find a good university
+      - Can you recommend universities
+      - What universities are good for me
+      - I need help choosing a university
+      - Show me universities that match my profile
+      - I want personalized university recommendations
+      - Help me with university selection
+      - Find universities based on my qualifications
+      - I'm looking for the right university
+      - Which universities should I consider
+      - I want university matching
+      - Help me match universities
+      - Find universities for my background
+      - Recommend universities for me
+      - I need university suggestions
+      - Show me suitable universities
+      - Find me matching universities
+      - I want to apply to universities
+      - Help me select universities
+      - University recommendations please
+      - I'm seeking university advice
+      - Guide me to the right university
+
+  # ─── Weather Queries ───────────────────────────────────
+  - intent: ask_weather
+    examples: |
+      - What's the weather in the UK?
+      - Tell me the weather for London
+      - How's the weather outside?
+      - Is it raining in Manchester?
+      - Weather forecast for Edinburgh please
+      - Current weather in UK
+      - How's the climate in Britain?
+      - Weather update please
+      - What's the weather like in UK
+      - UK weather information
+      - Climate in United Kingdom
+
+  # ─── Living Cost FAQs ─────────────────────────────────
+  - intent: ask_living_cost
+    examples: |
+      - What is the living cost in the UK?
+      - How much does it cost to live outside London?
+      - Tell me the UK living expenses
+      - Average cost of living in London
+      - Living cost in UK per year
+      - Monthly expenses in UK
+      - Cost of living for students
+      - How much money do I need to live in UK?
+      - Accommodation costs
+      - Living expenses breakdown
+      - UK living costs
+      - Cost of living information
+      - Living expenses in UK
+      - How expensive is UK
+      - Monthly living cost UK
+      - Student living expenses
+      - Accommodation expenses
+      - UK cost breakdown
+
+  # ─── Budget-Based University Query ─────────────────────
+  - intent: ask_universities_by_budget
+    examples: |
+      - What universities can I study in with [£20000](budget)?
+      - Show me universities within [£15000](budget) budget
+      - Which universities cost less than [£25000](budget)?
+      - Universities under [£18000](budget)
+      - What universities can I afford with [20000](budget) pounds?
+      - Cheap universities under [£22000](budget)
+      - Universities within my budget of [£17000](budget)
+      - Show universities for [£19000](budget) budget
+      - What universities cost around [£20000](budget)?
+      - Affordable universities under [£21000](budget)
+      - Universities I can afford with [20000](budget) budget
+      - Which unis are within [£20000](budget)?
+      - Show me options under [£20000](budget)
+      - Universities with fees under [£20000](budget)
+
+  # ─── Document Checklist FAQs ──────────────────────────
+  - intent: ask_doc_checklist
+    examples: |
+      - What documents do I need to apply?
+      - University application checklist
+      - Show me the document checklist
+      - What are the documents before applying?
+      - Docs required for UK university application
+      - Application requirements
+      - Required paperwork
+      - Document list for application
+      - What papers do I need?
+      - Application documents needed
+      - Documents for university application
+      - Required documents list
+      - Application document checklist
+      - What documents are needed
+      - Document requirements
+      - Papers needed for application
+
+  # ─── Visa Information ─────────────────────────────────
+  - intent: ask_visa_info
+    examples: |
+      - Tell me about UK student visa
+      - Visa requirements for Nepal students
+      - How to apply for student visa?
+      - Visa process for UK
+      - Student visa documentation
+      - Visa fees for UK
+      - When to apply for visa?
+      - Visa interview tips
+      - UK visa information
+      - Student visa requirements
+      - Visa application process
+      - UK student visa guide
+      - Visa documentation needed
+      - Student visa fees
+      - How to get UK visa
+      - What are the latest document requirements for a UK study visa?
+      - Document requirements for UK student visa
+      - Latest visa document requirements
+      - UK study visa document requirements
+      - What documents do I need for UK student visa?
+
+  # ─── Scholarship Information ──────────────────────────
+  - intent: ask_scholarship
+    examples: |
+      - Are there scholarships available?
+      - Scholarship for Nepali students
+      - Financial aid options
+      - How to get scholarship in UK?
+      - Merit-based scholarships
+      - Need-based financial aid
+      - University scholarships
+      - External funding options
+      - UK scholarships
+      - Scholarship opportunities
+      - Financial assistance
+      - Funding for studies
+      - Scholarship information
+      - Available scholarships
+      - How to apply for scholarships
+
+  # ─── University Rankings ──────────────────────────────
+  - intent: ask_university_ranking
+    examples: |
+      - University rankings in UK
+      - Best universities for my field
+      - Top ranked universities
+      - University reputation
+      - QS rankings
+      - Times Higher Education rankings
+      - Which university is better?
+      - Top UK universities
+      - University ranking information
+      - Best universities in UK
+      - University quality rankings
+      - Top rated universities
+      - University comparison by ranking
+
+  # ─── Application Deadlines ────────────────────────────
+  - intent: ask_application_deadline
+    examples: |
+      - When is the application deadline?
+      - Application dates for September intake
+      - Deadline for January intake
+      - When should I apply?
+      - Application timeline
+      - Last date to apply
+      - Important dates for application
+      - Application deadlines
+      - When to submit application
+      - Application cut-off dates
+      - Submission deadlines
+      - Application schedule
+      - Important application dates
+
+  # ─── Compare Universities ─────────────────────────────
+  - intent: compare_universities
+    examples: |
+      - Compare University of Manchester and Leeds
+      - Which is better between these universities?
+      - Help me choose between options
+      - Difference between these universities
+      - Compare my shortlisted universities
+      - Pros and cons of universities
+      - University comparison
+      - Compare different universities
+      - Help me compare universities
+      - University vs university
+      - Which university is better
+      - Compare options
+
+  # ─── Field Specific Requests ──────────────────────────
+  - intent: ask_field_specific
+    examples: |
+      - Yes I want recommendation in IT field
+      - I want to study Computer Science
+      - Looking for Engineering universities
+      - Best universities for Business
+      - I'm interested in Medicine
+      - Show me universities for Law
+      - Psychology programs
+      - Economics courses
+      - MBA programs
+      - Data Science universities
+      - Mechanical Engineering
+      - Civil Engineering
+      - Electrical Engineering
+      - Software Engineering
+      - Information Technology
+      - Computer Engineering
+      - Business Management
+      - International Business
+      - Finance programs
+      - Accounting courses
+      - Marketing programs
+      - HR management
+      - Project Management
+      - Biotechnology
+      - Chemistry programs
+      - Physics programs
+      - Mathematics courses
+      - Statistics programs
+      - Architecture programs
+      - Design courses
+      - Art programs
+      - Media Studies
+      - Journalism
+      - Literature programs
+      - History courses
+      - Philosophy programs
+      - Sociology courses
+      - Political Science
+      - International Relations
+      - Public Administration
+      - Social Work
+      - Education programs
+      - Teaching courses
+      - Nursing programs
+      - Pharmacy courses
+      - Dentistry programs
+      - Veterinary Science
+      - Environmental Science
+      - Geography programs
+      - Geology courses
+      - Hospitality Management
+      - Tourism Management
+      - Sports Science
+      - Physiotherapy
+      - Occupational Therapy
+      - Agriculture programs
+      - Food Science
+      - Nutrition courses
+
+  # ─── Out of Scope / Fallback ──────────────────────────
+  - intent: out_of_scope
+    examples: |
+      - I want to know about US universities
+      - What about Canada?
+      - Tell me about Australia
+      - How is the weather on Mars?
+      - What's 2+2?
+      - Can you cook?
+      - Tell me a joke
+      - What's the capital of France?
+      - How to fix my computer?
+      - What's the stock price today?
+      - Can you help me with homework?
+      - I need a job
+      - How to lose weight?
+      - What's the latest news?
+      - Can you book a flight?
+      - I want to learn Spanish
+      - How to make money online?
+      - What's the meaning of life?
+      - Can you sing a song?
+      - I'm hungry
+      - What time is it?
+      - How old are you?
+      - Where do you live?
+      - Do you have feelings?
+      - Can you see me?
+      - What's your favorite color?
+      - Can you drive a car?
+      - How to become rich?
+      - What's the best restaurant?
+      - Can you dance?
+      - I'm bored
+
+  # ─── Relaxed Criteria Request ──────────────────────────
+  - intent: request_relaxed_criteria
+    examples: |
+      - yes please show
+      - yes show me
+      - yes please
+      - show me anyway
+      - yes I want to see
+      - show with relaxed criteria
+      - yes show them
+      - please show universities
+      - show me options
+      - yes I'm interested
+      - show me what you have
+      - display them anyway
+      - yes go ahead
+      - show me universities
+      - I want to see options
+
+  # ─── IELTS Waiver Universities ─────────────────────────
+  - intent: ask_ielts_waiver
+    examples: |
+      - I have English subject grade B+, which universities offer IELTS waiver?
+      - Show universities with IELTS waiver
+      - IELTS waiver universities for Nepalese students
+      - Can I apply without IELTS?
+      - Universities that accept MOI or English waiver
+      - Apply without IELTS in the UK
+
+  # ─── Best Affordable Universities ──────────────────────
+  - intent: ask_affordable_universities
+    examples: |
+      - List the most affordable universities in the UK for international students.
+      - Cheapest universities in the UK
+      - Best affordable universities
+      - Low tuition fee universities UK
+      - Show affordable universities for international students
+
+  # ─── Safety: Self-harm / crisis ─────────────────────────
+  - intent: self_harm
+    examples: |
+      - I want to end my life
+      - I want to suicide
+      - I'm suicidal
+      - I want to kill myself
+      - I feel like ending everything
+      - I am depressed and want to die
+      - life is not worth it
+
+  # ─── Safety: Illegal/dangerous requests ────────────────
+  - intent: illegal_or_dangerous
+    examples: |
+      - I want to buy a gun
+      - how to get a weapon in the UK
+      - help me hack a website
+      - teach me to make a bomb
+      - how to get fake documents
+      - help me break the law
